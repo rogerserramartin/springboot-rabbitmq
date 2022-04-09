@@ -8,5 +8,5 @@ import lombok.*;
 @ToString
 public class OpengateRequest {
     private String version;
-    private OpengateOperation operation;
+    //private OpengateOperation operation;
 }

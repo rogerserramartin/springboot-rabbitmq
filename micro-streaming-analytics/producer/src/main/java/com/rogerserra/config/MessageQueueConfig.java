@@ -13,11 +13,24 @@ import org.springframework.context.annotation.Configuration;
 public class MessageQueueConfig {
 
     @Value("${spring.rabbitmq.queue}") // this value comes from application.yml
-    public static String queue;
+    private String queue;
+    //private static final String queue = "request_queue";
     @Value("${spring.rabbitmq.exchange}") // this value comes from application.yml
-    public static String exchange;
+    private String exchange;
     @Value("${spring.rabbitmq.routingkey}") // this value comes from application.yml
-    public static String routingKey;
+    private String routingKey;
+
+    public String getQueue() {
+        return queue;
+    }
+
+    public String getExchange() {
+        return exchange;
+    }
+
+    public String getRoutingKey() {
+        return routingKey;
+    }
 
     @Bean
     public Queue queue(){
