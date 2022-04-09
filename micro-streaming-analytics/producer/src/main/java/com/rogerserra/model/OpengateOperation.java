@@ -7,5 +7,5 @@ import lombok.*;
 @NoArgsConstructor
 @ToString
 public class OpengateOperation {
-  private OpengateResponse response;
+    private OpengateResponse response;
 }

@@ -12,6 +12,6 @@ import java.time.LocalDateTime;
 public class Machine {
     private String name;
     private String result;
-    private LocalDateTime timestamp;
+    //private LocalDateTime timestamp;
     private BigDecimal energyConsumption;
 }

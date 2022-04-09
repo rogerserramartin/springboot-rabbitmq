@@ -10,7 +10,7 @@ import java.util.ArrayList;
 @ToString
 public class OpengateResponse {
     private String id;
-    private LocalDateTime timestamp;
+    //private LocalDateTime timestamp;
     private String name;
     private String resultCode;
     private String resultDescription;
