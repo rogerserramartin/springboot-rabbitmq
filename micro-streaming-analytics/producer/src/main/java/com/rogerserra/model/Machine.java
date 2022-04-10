@@ -13,5 +13,5 @@ public class Machine {
     private String name;
     private String result;
     //private LocalDateTime timestamp;
-    private BigDecimal energyConsumption;
+    private double energyConsumption;
 }
