@@ -74,7 +74,6 @@ class PublisherControllerTest {
                 )
         );
     }
-
     /*
     @Ignore
     @Test
