@@ -5,9 +5,12 @@ import com.rogerserra.repository.StatisticsRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+
+import static org.mockito.Mockito.verify;
 
 public class RequestListenerTest {
 
@@ -30,6 +33,8 @@ public class RequestListenerTest {
 
     @Test
     void canRegisterRequest(){
-        OpengateRequest opengateRequest = new OpengateRequest();
+        //OpengateRequest opengateRequest = new OpengateRequest();
+        //underTest.listener(opengateRequest);
+        //verify(statisticsRepository).save(opengateRequest);
     }
 }
