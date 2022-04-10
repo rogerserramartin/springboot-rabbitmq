@@ -11,13 +11,11 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-@Configuration
 public class EnergyManager {
 
     public EnergyManager() {
     }
 
-    @Bean
     public Statistics calculateStatistics(List<Machine> machineList) {
         double mean = 0d;
         List<Double> energyConsumptionList = new ArrayList<>();
@@ -25,6 +23,7 @@ public class EnergyManager {
             energyConsumptionList.add(machine.getEnergyConsumption());
             mean += machine.getEnergyConsumption(); // BigDecimals inside loops work a bit different as we can see
         }
+        mean = mean / machineList.size();
         int medianValuePosition = (Integer) (energyConsumptionList.size() / 2); // whole number
         int firstQuartilePosition = (Integer) (energyConsumptionList.size() / 4);
         int thirdQuartilePosition = energyConsumptionList.size() - firstQuartilePosition;
@@ -54,7 +53,6 @@ public class EnergyManager {
                 .build();
     }
 
-    @Bean
     public Double calculateStandardDeviation(List<Double> energyConsumptionList, double mean) {
         double standardDeviation = 0d;
         for(Double energy : energyConsumptionList){
@@ -65,7 +63,6 @@ public class EnergyManager {
         return Math.sqrt(squareRoot);
     }
 
-    @Bean
     public Double calculateMode(List<Double> energyConsumptionList) {
         // given an array, we'll loop N times, where N is the arrayList size. This way, we can obtain the mode
         // example: 1,4,6,1,4,4 -> in 1st iteration 1 appears 2 times, but in 2nd 4 appears 3, so 1 is replaced by 4 as the new mode
@@ -88,4 +85,3 @@ public class EnergyManager {
         return maxValue; // aka mode
     }
 }
-
