@@ -1,0 +1,34 @@
+version: "3.8"
+services:
+  mongodb:
+    image: mongo
+    container_name: mongodb-opengate
+    ports:
+      - "27017:27017"
+    volumes:
+      - ~/apps/mongo:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=rootuser
+      - MONGO_INITDB_ROOT_PASSWORD=rootpass
+
+  mongo-express:
+    image: mongo-express
+    container_name: mongo-express-opengate
+    restart: always
+    ports:
+      - "8081:8081"
+    environment:
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=rootuser
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=rootpass
+      - ME_CONFIG_MONGODB_SERVER=mongodb
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq-opengate
+    ports:
+      - "5672:5672" # where we publish the messages
+      - "15672:15672" # where we get / expose the messages, aka management port
+
+networks:
+  default:
+    name: opengate_microservices
