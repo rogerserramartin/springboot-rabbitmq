@@ -54,12 +54,12 @@ class PublisherControllerTest {
         machines.add(new Machine(
                 "Machine 1",
                 "OK",
-                new BigDecimal("15.3467")
+                15.67
         ));
         machines.add(new Machine(
                 "Machine 2",
                 "OK",
-                new BigDecimal("56.1356")
+                34.56
         ));
         opengateRequest = new OpengateRequest(
                 "1.0",
@@ -74,7 +74,6 @@ class PublisherControllerTest {
                 )
         );
     }
-
     /*
     @Ignore
     @Test

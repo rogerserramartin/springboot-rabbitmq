@@ -1,0 +1,15 @@
+server:
+  port: 9001
+spring:
+  rabbitmq:
+    exchange: request_exchange       # ${} java
+    queue: request_queue             # ${} java
+    routingkey: request_routingkey   # ${} java
+  data:
+    mongodb:
+      authentication-database: admin # this comes from mongo-express
+      username: rootuser
+      password: rootpass
+      database: rogerserra # first, we need to create this db using mongo-express gui
+      port: 27017 # most of this comes from docker-compose.yml
+      host: localhost

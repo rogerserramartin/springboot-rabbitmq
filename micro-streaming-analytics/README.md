@@ -42,3 +42,13 @@ First, we need to create the maven project following the documentation:
 </li>
 </ol>
 
+### CONSUMER MICROSERVICE
+<p>This microservice will receive the message from the message queue, and will use it to calculate some stuff.</p>
+<ol>
+<li>
+<p>First, we will define our model class with some attributes: average, median, minimum... and annotate it with @Document</p>
+</li>
+<li>
+<p>Then, we'll define our mongo repository.</p>
+</li>
+</ol>
