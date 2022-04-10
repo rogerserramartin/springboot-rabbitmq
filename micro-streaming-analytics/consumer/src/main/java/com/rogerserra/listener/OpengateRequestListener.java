@@ -22,6 +22,11 @@ public class OpengateRequestListener {
     @Autowired
     EnergyManager energyManager;
 
+    public OpengateRequestListener(StatisticsRepository statisticsRepository, EnergyManager energyManager) {
+        this.statisticsRepository = statisticsRepository;
+        this.energyManager = energyManager;
+    }
+
     @RabbitListener(queues = "request_queue")
     public void listener(OpengateRequest opengateRequest){
         System.out.println("Message from QUEUE receiced!");
@@ -35,6 +40,7 @@ public class OpengateRequestListener {
             statisticsRepository.save(statistics);
         } catch (Exception e) {
             e.printStackTrace();
+            System.out.println("SOMETHING WENT WRONG WITH THE DATA!");
         }
     }
 }
