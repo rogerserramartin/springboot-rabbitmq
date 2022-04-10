@@ -1,0 +1,7 @@
+server:
+  port: 9000
+spring:
+  rabbitmq:
+    exchange: request_exchange       # ${} java
+    queue: request_queue             # ${} java
+    routingkey: request_routingkey   # ${} java
